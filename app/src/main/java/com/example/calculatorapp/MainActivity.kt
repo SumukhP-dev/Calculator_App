@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         // Functionality for History button
         findViewById<Button>(R.id.History).setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
-            intent.putStringArrayListExtra("historyTextStringArrayList", historyText)
+            intent.putStringArrayListExtra("historyText", historyText)
             startActivity(intent)
         }
     }
