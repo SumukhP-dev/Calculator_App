@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-    private var historyText = emptyArray<String>()
+    private var historyText = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,8 +36,8 @@ class MainActivity : AppCompatActivity() {
             if (number1.text != null && number2.text != null) {
                 finalNumber.text = (number1.text.toString().toDouble()
                         + number2.text.toString().toDouble()).toString()
-                historyText += number1.text.toString() + " + " +
-                            number2.text.toString() + " = " + finalNumber.text.toString() + "\n"
+                historyText.add(number1.text.toString() + " + " +
+                        number2.text.toString() + " = " + finalNumber.text.toString() + "\n")
             }
         }
 
@@ -45,17 +45,36 @@ class MainActivity : AppCompatActivity() {
             if (number1.text != null && number2.text != null) {
                 finalNumber.text = (number1.text.toString().toDouble()
                         - number2.text.toString().toDouble()).toString()
-                historyText += number1.text.toString() + " - " +
-                        number2.text.toString() + " = " + finalNumber.text.toString() + "\n"
+                historyText.add(number1.text.toString() + " - " +
+                        number2.text.toString() + " = " + finalNumber.text.toString() + "\n")
+            }
+        }
+
+        findViewById<Button>(R.id.MultiplicationButton).setOnClickListener {
+            if (number1.text != null && number2.text != null) {
+                finalNumber.text = (number1.text.toString().toDouble()
+                        * number2.text.toString().toDouble()).toString()
+                historyText.add(number1.text.toString() + " * " +
+                        number2.text.toString() + " = " + finalNumber.text.toString() + "\n")
+            }
+        }
+
+        findViewById<Button>(R.id.DivisionButton).setOnClickListener {
+            if (number1.text != null && number2.text != null) {
+                finalNumber.text = (number1.text.toString().toDouble()
+                        / number2.text.toString().toDouble()).toString()
+                historyText.add(number1.text.toString() + " / " +
+                        number2.text.toString() + " = " + finalNumber.text.toString() + "\n")
             }
         }
 
         findViewById<Button>(R.id.History).setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
-            //intent.putStringArrayListExtra("historyTextStringArrayList", historyText)
+            intent.putStringArrayListExtra("historyTextStringArrayList", historyText)
             startActivity(intent)
         }
     }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
