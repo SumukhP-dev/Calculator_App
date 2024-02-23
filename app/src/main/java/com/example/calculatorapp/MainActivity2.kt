@@ -20,12 +20,14 @@ class MainActivity2 : AppCompatActivity() {
 
         var historyText = intent.getStringArrayListExtra("historyText")
 
+        // Functionality for Back button
         findViewById<Button>(R.id.Back).setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             intent.putStringArrayListExtra("historyText", historyText)
             startActivity(intent)
         }
 
+        // Functionality for List View
         val arrayAdapter: ArrayAdapter<*>
         var listView = findViewById<ListView>(R.id.ListView)
         arrayAdapter = ArrayAdapter(this,

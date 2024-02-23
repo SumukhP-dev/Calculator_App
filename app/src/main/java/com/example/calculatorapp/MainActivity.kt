@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         var number2 = findViewById<TextView>(R.id.Number2)
         var finalNumber = findViewById<TextView>(R.id.FinalNumber)
 
+        // Functionality for Plus button
         findViewById<Button>(R.id.PlusButton).setOnClickListener {
             if (number1.text != null && number2.text != null) {
                 finalNumber.text = (number1.text.toString().toDouble()
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // Functionality for Minus button
         findViewById<Button>(R.id.MinusButton).setOnClickListener {
             if (number1.text != null && number2.text != null) {
                 finalNumber.text = (number1.text.toString().toDouble()
@@ -50,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // Functionality for Multiplication button
         findViewById<Button>(R.id.MultiplicationButton).setOnClickListener {
             if (number1.text != null && number2.text != null) {
                 finalNumber.text = (number1.text.toString().toDouble()
@@ -59,6 +62,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // Functionality for Division button
         findViewById<Button>(R.id.DivisionButton).setOnClickListener {
             if (number1.text != null && number2.text != null) {
                 finalNumber.text = (number1.text.toString().toDouble()
@@ -68,6 +72,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // Functionality for History button
         findViewById<Button>(R.id.History).setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
             intent.putStringArrayListExtra("historyTextStringArrayList", historyText)
