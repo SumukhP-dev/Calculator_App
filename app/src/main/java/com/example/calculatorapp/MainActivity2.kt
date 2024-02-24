@@ -30,8 +30,10 @@ class MainActivity2 : AppCompatActivity() {
         // Functionality for List View
         val arrayAdapter: ArrayAdapter<*>
         var listView = findViewById<ListView>(R.id.ListView)
-        arrayAdapter = ArrayAdapter(this,
-            android.R.layout.simple_list_item_1, mutableListOf(historyText))
-        listView.adapter = arrayAdapter
+        if (historyText != null) {
+            arrayAdapter = ArrayAdapter(this,
+                android.R.layout.simple_list_item_1, historyText.toArray())
+            listView.adapter = arrayAdapter
+        }
     }
 }
