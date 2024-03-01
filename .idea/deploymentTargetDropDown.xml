@@ -5,6 +5,21 @@
       <entry key="App">
         <State />
       </entry>
+      <entry key="ExampleInstrumentedTest">
+        <State />
+      </entry>
+      <entry key="backButtonFunctionality()">
+        <State />
+      </entry>
+      <entry key="checkSum()">
+        <State />
+      </entry>
+      <entry key="historyButtonTest()">
+        <State />
+      </entry>
+      <entry key="historyTextCheck()">
+        <State />
+      </entry>
     </value>
   </component>
 </project>
